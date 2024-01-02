@@ -3,7 +3,7 @@ import Link from "next/link";
 import "animate.css"
 export default function Home() {
   return (
-    <div className="flex flex-col justify-between h-screen font-sans">
+    <div className="flex flex-col justify-between h-screen sm:h-screen font-sans">
       <div className="font-sans flex flex-col h-screen items-center w-screen text-white justify-center">
         <h1 className="text-3xl sm:text-6xl text-center font-bold animate__animated animate__backInLeft">
           Hi, I am Krishan Kant Sen
