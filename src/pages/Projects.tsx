@@ -47,8 +47,7 @@ const Projects = () => {
       color: 'from-purple-500 to-pink-600',
       date: 'November 2024',
       status: 'Development',
-      liveUrl: '#',
-      githubUrl: '#',
+     
       features: [
         'RAG-based question answering',
         'Multi-agent orchestration',
@@ -65,8 +64,7 @@ const Projects = () => {
       color: 'from-green-500 to-teal-600',
       date: 'April 2025',
       status: 'In Production',
-      liveUrl: '#',
-      githubUrl: '#',
+     
       features: [
         'Attendance tracking system',
         'Transport management',
@@ -84,8 +82,7 @@ const Projects = () => {
       color: 'from-orange-500 to-red-600',
       date: 'March 2024',
       status: 'Live',
-      liveUrl: '#',
-      githubUrl: '#',
+      
       features: [
         'Real-time message streaming',
         'Distributed data processing',
@@ -172,7 +169,7 @@ const Projects = () => {
 
                   {/* Action Buttons */}
                   <div className="flex space-x-4">
-                    <motion.a
+                    {project.liveUrl &&                    <motion.a
                       href={project.liveUrl}
                       className="inline-flex items-center px-6 py-3 bg-teal-600 text-white font-medium rounded-lg hover:bg-teal-700 transition-all duration-200"
                       whileHover={{ scale: 1.05 }}
@@ -180,8 +177,8 @@ const Projects = () => {
                     >
                       <ExternalLink className="mr-2" size={18} />
                       View Live
-                    </motion.a>
-                    <motion.a
+                    </motion.a>}
+                    {project.githubUrl &&<motion.a
                       href={project.githubUrl}
                       className="inline-flex items-center px-6 py-3 border-2 border-slate-300 text-slate-700 font-medium rounded-lg hover:border-teal-600 hover:text-teal-600 transition-all duration-200"
                       whileHover={{ scale: 1.05 }}
@@ -189,7 +186,7 @@ const Projects = () => {
                     >
                       <Github className="mr-2" size={18} />
                       Code
-                    </motion.a>
+                    </motion.a>}
                   </div>
                 </div>
 
