@@ -11,30 +11,24 @@ import {
 const projects = [
   {
     number: "01",
-    name: "Tomato",
-    type: "Food delivery platform",
-    description:
-      "A full-stack food ordering experience with a responsive interface and a Node.js, Express and MongoDB backend.",
-    stack: ["React", "Node.js", "Express", "MongoDB"],
-    href: "https://tomato-kks.vercel.app/",
+    name: "GraphQL DevTools",
+    type: "Chrome extension · Developer tooling",
+    description: "A developer inspector that captures GraphQL queries, mutations and subscriptions in real time for faster debugging.",
+    stack: ["TypeScript", "React", "Chrome Extension APIs"],
   },
   {
     number: "02",
-    name: "Social Media Web App",
-    type: "Full-stack application",
-    description:
-      "A social application built with a modern Next.js frontend, Material UI and a MongoDB-backed API.",
-    stack: ["Next.js", "Material UI", "Node.js", "MongoDB"],
-    href: "https://github.com/krishankantsen",
+    name: "Field Config Generator",
+    type: "AI-assisted configuration",
+    description: "A React application and custom LLM skill that converts free-form requirements into validated JSON configuration.",
+    stack: ["React", "Claude"],
   },
   {
     number: "03",
-    name: "Survey Form",
-    type: "Multi-page web application",
-    description:
-      "A multi-step survey experience supported by a React frontend and an Express and MongoDB backend.",
-    stack: ["React", "Node.js", "Express", "MongoDB"],
-    href: "https://survey-form-kks.vercel.app/",
+    name: "Containerised React Deployment",
+    type: "Cloud & DevOps",
+    description: "A Vite application deployed on AWS ECS with runtime environment injection, allowing one Docker image to run across environments.",
+    stack: ["Docker", "AWS ECS", "Vite"],
   },
 ];
 
@@ -63,7 +57,7 @@ export default function Home() {
       <section className="hero section-shell" id="home">
         <div className="hero-kicker">
           <span className="status-dot" />
-          <span>FULL STACK DEVELOPER</span>
+          <span>FULL STACK AI ENGINEER</span>
           <span className="kicker-divider">/</span>
           <span>INDIA</span>
         </div>
@@ -138,15 +132,9 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <Link
-                aria-label={`View ${project.name}`}
-                className="project-link"
-                href={project.href}
-                target="_blank"
-                rel="noreferrer"
-              >
+              <span className="project-link" aria-label="Featured project">
                 <ArrowUpRight size={20} />
-              </Link>
+              </span>
             </article>
           ))}
         </div>
