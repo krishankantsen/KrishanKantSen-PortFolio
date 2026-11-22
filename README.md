@@ -34,3 +34,22 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+
+## Contact form email configuration
+
+The contact form sends submissions through the `/api/sendemail` route using SMTP.
+Copy `.env.example` to `.env.local` for local development and configure:
+
+- `SMTP_HOST`: SMTP server hostname (Gmail: `smtp.gmail.com`).
+- `SMTP_PORT`: SMTP port (Gmail SSL: `465`).
+- `SMTP_USER`: Gmail address used to send messages.
+- `SMTP_PASS`: Gmail App Password (never use or commit your regular Gmail password).
+- `CONTACT_TO_EMAIL`: inbox that receives portfolio enquiries.
+
+Add the same variables under **Vercel → Project → Settings → Environment Variables** for
+the Production and Preview environments, then redeploy. Keep real credentials out of
+Git and never commit `.env.local`.
+
+The contact form uses the visitor's email address as `Reply-To`, so you can reply
+directly from the notification email.
