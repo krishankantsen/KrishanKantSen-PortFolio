@@ -1,34 +1,73 @@
-export const projects = [
+/**
+ * Project details are based on the latest resume.
+ * Public demo links are included only where an existing URL is available.
+ */
+export const featuredProjects = [
   {
-    name: "Tomato-Food Delivery WebApp",
-    des: "Our web app provides a secure and intuitive e-commerce experience. Users can easily sign up, log in, add items to their cart, and seamlessly place orders. With a responsive design and robust security measures, shopping is made convenient and safe. Explore modern online retail with our feature-packed full-stack web app!",
-    tech: "ReactJs, NodeJs, ExpressJs, MongoDB, BootstrapCSS",
-    link:"https://tomato-kks.vercel.app/"
+    number: "01",
+    name: "GraphQL DevTools",
+    category: "Chrome Extension",
+    description:
+      "An Apollo-DevTools-style inspector that captures and displays GraphQL queries, mutations and subscriptions in real time, helping developers debug GraphQL web applications faster.",
+    tech: ["TypeScript", "React", "Chrome Extension APIs"],
   },
   {
-    name:"Social Media WebApp",
-    des:"Creating a vibrant social media platform with user authentication, post creation, and profile customization. Utilizing modern technologies for a seamless and expressive user experience.",
-    tech:"NextJs, MongoDB ,ExpressJS, NodeJS, MUI",
-    link:"https://github.com/krishankantsen"
+    number: "02",
+    name: "Field Config Generator",
+    category: "AI-assisted configuration",
+    description:
+      "A React application paired with a custom LLM skill that turns free-form requirement forms into validated JSON configuration, reducing manual setup work.",
+    tech: ["React", "Claude"],
   },
   {
-    name:"Multipaged Survey Form",
-    des:"Created an interactive survey form using React with multiple components for improved user experience. Utilized JavaScript, CSS, and React's useState for dynamic form elements. Implemented localStorage for seamless data persistence. Integrated Express.js and MongoDB for efficient backend operations.",
-    tech: "ReactJs, NodeJs, ExpressJs, MongoDB",
-    link:"https://survey-form-kks.vercel.app/"
+    number: "03",
+    name: "Containerised React Deployment",
+    category: "Cloud & DevOps",
+    description:
+      "A Vite React application deployed on AWS ECS with runtime environment injection, allowing one Docker image to run across multiple environments.",
+    tech: ["Docker", "AWS ECS", "Vite"],
   },
-  {
-    name:"Netflix Webseries WebPage",
-    des:"Experience the pinnacle of Netflix entertainment on our ReactJS-powered webpage. This project offers a sleek design, responsive layout, and key details for the top 10 web series. Explore seamlessly and elevate your binge-watching with this user-friendly ReactJS application. ",
-    tech: "ReactJs",
-    link:"https://krishankantsen.github.io/Webseries/"
-  },
-  {
-    name:"Netflix HomePage",
-    des:"Explore the vast world of entertainment on our immersive Netflix homepage. This project combines a captivating design, user-friendly interface, and a responsive layout, providing you with a seamless browsing experience. Dive into your favorite genres and discover new releases effortlessly with this HTML and CSS masterpiece.",
-    tech: "HTML, CSS",
-    link:"https://krishankantsen.github.io/Netflix_Home/"
-  }
+];
 
-
+export const webProjects = [
+  {
+    name: "Tomato — Food Delivery",
+    description:
+      "A responsive food ordering application with cart and order flows, backed by a Node.js, Express and MongoDB stack.",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    link: "https://tomato-kks.vercel.app/",
+    linkLabel: "View live project",
+  },
+  {
+    name: "Social Media Web App",
+    description:
+      "A social platform concept with authentication, post creation and profile customisation.",
+    tech: ["Next.js", "Node.js", "Express", "MongoDB", "MUI"],
+    link: "https://github.com/krishankantsen",
+    linkLabel: "View GitHub profile",
+  },
+  {
+    name: "Multi-page Survey Form",
+    description:
+      "An interactive multi-step survey with dynamic form elements and persistent data, supported by an Express and MongoDB backend.",
+    tech: ["React", "Node.js", "Express", "MongoDB"],
+    link: "https://survey-form-kks.vercel.app/",
+    linkLabel: "View live project",
+  },
+  {
+    name: "Netflix Web Series Page",
+    description:
+      "A responsive React page presenting details for popular web series.",
+    tech: ["React"],
+    link: "https://krishankantsen.github.io/Webseries/",
+    linkLabel: "View live project",
+  },
+  {
+    name: "Netflix Homepage Concept",
+    description:
+      "A responsive homepage concept built to practise layout, styling and frontend fundamentals.",
+    tech: ["HTML", "CSS"],
+    link: "https://krishankantsen.github.io/Netflix_Home/",
+    linkLabel: "View live project",
+  },
 ];
