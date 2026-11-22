@@ -611,3 +611,118 @@ a {
     animation-iteration-count: 1 !important;
   }
 }
+
+
+/* Navigation */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 76px;
+  background: rgb(246 245 241 / 92%);
+  border-bottom: 1px solid rgb(217 215 206 / 75%);
+  backdrop-filter: blur(16px);
+}
+
+.nav-shell {
+  position: relative;
+  width: min(1120px, calc(100% - 64px));
+  height: 100%;
+  margin-inline: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+}
+
+.brand-symbol {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+  font-family: var(--serif);
+  font-size: 18px;
+  letter-spacing: -0.05em;
+}
+
+.desktop-navigation {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-link {
+  position: relative;
+  color: var(--muted);
+  font-size: 12px;
+  transition: color 160ms ease;
+}
+
+.nav-link:hover,
+.nav-link:focus-visible {
+  color: var(--accent);
+}
+
+.mobile-menu-toggle,
+.mobile-navigation {
+  display: none;
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    height: 66px;
+  }
+
+  .nav-shell {
+    width: calc(100% - 40px);
+  }
+
+  .brand-mark {
+    font-size: 9px;
+  }
+
+  .mobile-menu-toggle {
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--line);
+    background: transparent;
+    color: var(--ink);
+    cursor: pointer;
+  }
+
+  .mobile-navigation {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    width: min(240px, calc(100vw - 40px));
+    padding: 10px 18px;
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    box-shadow: 0 14px 35px rgb(32 33 31 / 9%);
+  }
+
+  .mobile-navigation a {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 13px;
+  }
+
+  .mobile-navigation a:last-child {
+    border-bottom: 0;
+  }
+}
