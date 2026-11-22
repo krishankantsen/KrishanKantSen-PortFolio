@@ -218,7 +218,7 @@ export default function Home() {
               <Link href="https://www.linkedin.com/in/krishan-kant-sen-506333260/" target="_blank" rel="noreferrer" aria-label="LinkedIn">
                 <Linkedin size={18} />
               </Link>
-              <Link href="mailto:">
+              <Link href="/contact" aria-label="Contact">
                 <Mail size={18} />
               </Link>
             </div>
