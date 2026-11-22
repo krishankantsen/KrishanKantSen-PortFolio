@@ -1601,3 +1601,256 @@ a {
     border-bottom: 0;
   }
 }
+
+
+/* Motion system: restrained editorial entrances and responsive micro-interactions. */
+@keyframes editorial-rise-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes editorial-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes editorial-line-in {
+  from { transform: scaleX(0); transform-origin: left; }
+  to { transform: scaleX(1); transform-origin: left; }
+}
+
+@keyframes status-pulse {
+  0%, 100% { box-shadow: 0 0 0 4px #78916f1c; }
+  50% { box-shadow: 0 0 0 7px #78916f12; }
+}
+
+/* First-viewport motion is short so the content remains immediately accessible. */
+.site-header {
+  animation: editorial-fade-in 500ms ease-out both;
+}
+
+.brand-symbol {
+  transition: color 220ms ease, background-color 220ms ease, transform 220ms ease;
+}
+
+.brand-mark:hover .brand-symbol {
+  color: var(--paper);
+  background: var(--accent);
+  transform: rotate(-6deg);
+}
+
+.desktop-navigation .nav-link::after {
+  position: absolute;
+  right: 0;
+  bottom: -7px;
+  left: 0;
+  height: 1px;
+  background: var(--accent);
+  content: "";
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 220ms ease;
+}
+
+.desktop-navigation .nav-link:hover::after,
+.desktop-navigation .nav-link:focus-visible::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.hero-kicker {
+  animation: editorial-rise-in 650ms 80ms cubic-bezier(.2,.7,.2,1) both;
+}
+
+.hero-copy .eyebrow {
+  animation: editorial-rise-in 650ms 160ms cubic-bezier(.2,.7,.2,1) both;
+}
+
+.hero h1 {
+  animation: editorial-rise-in 800ms 230ms cubic-bezier(.2,.7,.2,1) both;
+}
+
+.hero-bottom {
+  animation: editorial-rise-in 700ms 360ms cubic-bezier(.2,.7,.2,1) both;
+}
+
+.hero-index {
+  animation: editorial-fade-in 700ms 520ms ease-out both;
+}
+
+.status-dot {
+  animation: status-pulse 2.8s ease-in-out infinite;
+}
+
+.button,
+.project-link,
+.text-link,
+.underlined-link,
+.social-links a {
+  transition:
+    transform 220ms cubic-bezier(.2,.7,.2,1),
+    color 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.button:hover,
+.button:focus-visible {
+  transform: translateY(-3px);
+  box-shadow: 0 9px 22px rgb(32 33 31 / 10%);
+}
+
+.text-link:hover svg,
+.underlined-link:hover svg,
+.text-link:hover span,
+.underlined-link:hover span {
+  transform: translate(3px, -2px);
+}
+
+.text-link svg,
+.underlined-link svg,
+.text-link span,
+.underlined-link span {
+  transition: transform 220ms ease;
+}
+
+.project-row {
+  transition:
+    padding 220ms ease,
+    background-color 220ms ease,
+    border-color 220ms ease;
+}
+
+.project-row:hover {
+  background-color: rgb(255 255 255 / 22%);
+}
+
+.project-link:hover {
+  transform: translate(2px, -2px);
+}
+
+.tag {
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background-color 180ms ease,
+    transform 180ms ease;
+}
+
+.tag:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: rgb(182 94 60 / 5%);
+  transform: translateY(-2px);
+}
+
+.capability-card,
+.about-skill-card,
+.web-project-card {
+  transition: background-color 240ms ease, transform 240ms ease;
+}
+
+.capability-card:hover,
+.about-skill-card:hover,
+.web-project-card:hover {
+  background-color: rgb(255 255 255 / 28%);
+}
+
+.about-portrait {
+  transition: filter 350ms ease, transform 500ms cubic-bezier(.2,.7,.2,1);
+}
+
+.about-portrait-wrap {
+  overflow: hidden;
+}
+
+.about-portrait-wrap:hover .about-portrait {
+  filter: saturate(1);
+  transform: scale(1.025);
+}
+
+.contact-form {
+  transition: border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.contact-form:focus-within {
+  border-color: rgb(182 94 60 / 55%);
+  box-shadow: 0 14px 38px rgb(32 33 31 / 5%);
+}
+
+.mobile-navigation {
+  transform-origin: top right;
+  animation: editorial-rise-in 220ms cubic-bezier(.2,.7,.2,1) both;
+}
+
+.mobile-navigation a {
+  transition: color 180ms ease, padding-left 180ms ease;
+}
+
+.mobile-navigation a:hover,
+.mobile-navigation a:focus-visible {
+  padding-left: 5px;
+  color: var(--accent);
+}
+
+/* Reveal content as it enters the viewport in browsers supporting scroll timelines. */
+@supports (animation-timeline: view()) {
+  .intro-band .intro-grid > *,
+  .work-section .section-heading,
+  .project-row,
+  .capabilities-section .section-heading,
+  .capability-card,
+  .experience-section > .section-label,
+  .experience-section > h2,
+  .experience-row,
+  .footer-inner > .section-label,
+  .footer-inner > h2,
+  .footer-inner > .button,
+  .about-hero > *,
+  .inner-section-heading,
+  .about-skill-card,
+  .about-timeline-row,
+  .education-grid article,
+  .projects-intro > *,
+  .featured-project,
+  .web-project-card,
+  .projects-contact-cta > *,
+  .contact-copy > *,
+  .contact-form {
+    animation: editorial-rise-in both;
+    animation-duration: 1ms;
+    animation-timeline: view();
+    animation-range: entry 0% cover 24%;
+  }
+
+  .project-row:nth-child(2),
+  .capability-card:nth-child(2),
+  .about-skill-card:nth-child(2),
+  .web-project-card:nth-child(2) {
+    animation-range: entry 0% cover 30%;
+  }
+}
+
+/* Respect the operating system's reduced-motion preference. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-delay: 0ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .status-dot {
+    animation: none !important;
+  }
+}
